@@ -16,12 +16,15 @@ const Review = () => {
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
 
-    console.log(`Order submitted!
+    const msg = `Order submitted!
     Meal: ${meal}
     Pax: ${pax}
     Restaurant: ${restaurant}
     Dishes: ${dishes.map(dish => `${dish.name} - ${dish.count}`)}
-    `);
+    `;
+
+    console.log(msg);
+    alert(msg);
   };
 
   return (
@@ -43,12 +46,13 @@ const Review = () => {
       <br />
 
       <Button
-        disabled={!meal || !pax || !restaurant || totalDishCount < pax}
+        disabled={!meal || !pax || !restaurant || totalDishCount < pax || totalDishCount > 10}
         onClick={handleSubmit}
       >
         {'✔'}
       </Button>
       {currentStep === OrderStep.Dish && totalDishCount < pax && <i>{'Add more food!'}</i>}
+      {totalDishCount > 10 && <i>{'Please do not exceed 10 food servings!'}</i>}
     </Card>
   );
 };
