@@ -1,0 +1,22 @@
+.crumb {
+  color: #313131;
+  background: #fafafa;
+
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  box-shadow: 0px 2px 2px 0px #5d5d5d;
+
+  transition: all ease 0.5s;
+}
+
+.crumb-current {
+  color: #fff;
+  background: #00b6ff;
+}
+
+.crumb-disabled {
+  color: #ddd;
+  background: #828282;
+}
