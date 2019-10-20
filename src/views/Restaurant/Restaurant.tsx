@@ -8,11 +8,11 @@ import { StepContext } from 'context/StepContext';
 
 const Restaurant = () => {
   const { stepNext, stepPrev } = useContext(StepContext);
-  const { restaurant, setRestaurant, availableRestaurants } = useContext(OrderContext);
+  const { meal, restaurant, setRestaurant, availableRestaurants } = useContext(OrderContext);
 
   return (
     <Card>
-      <h3>Where to order from?</h3>
+      <h3>Where to order {meal} from?</h3>
 
       <select value={restaurant} onChange={({ target: { value } }) => setRestaurant(value)}>
         {availableRestaurants.map(resto => (
@@ -23,8 +23,8 @@ const Restaurant = () => {
       <br />
 
       <div>
-        <Button onClick={stepPrev}>{'↩'}</Button>
-        <Button onClick={stepNext}>{'↪'}</Button>
+        <Button onClick={stepPrev}>{'<'}</Button>
+        <Button onClick={stepNext}>{'>'}</Button>
       </div>
     </Card>
   );

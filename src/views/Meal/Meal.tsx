@@ -45,7 +45,7 @@ const Meal = () => {
 
         <br />
 
-        <Button>{'↪'}</Button>
+        <Button>{'>'}</Button>
       </form>
     </Card>
   );

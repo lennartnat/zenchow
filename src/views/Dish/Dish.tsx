@@ -82,7 +82,7 @@ const Dish = () => {
       </Button>
       <br />
 
-      <Button onClick={stepPrev}>{'↩'}</Button>
+      <Button onClick={stepPrev}>{'<'}</Button>
     </Card>
   );
 };
