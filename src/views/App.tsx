@@ -31,7 +31,7 @@ const msgs: MsgType = {
     'WORD.FOOD': 'Food'
   },
   ja: {
-    'NAV.TITLE': 'ゼンチャウ',
+    'NAV.TITLE': 'ゼンチャオウ',
     'MEAL.MEALSELECT': '何のため注文しますか？',
     'MEAL.PAXINPUT': '何人が食べますか？',
     'REVIEW.TITLE': '注文確認書',
