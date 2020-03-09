@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import Card from 'components/Card/Card';
 import RadioButton from 'components/RadioButton/RadioButton';
@@ -25,7 +26,9 @@ const Meal = () => {
   return (
     <Card>
       <form onSubmit={handleSubmit} className={'form-meal'}>
-        <h3>What's this order for?</h3>
+        <h3>
+          <FormattedMessage id={'MEAL.MEALSELECT'} />
+        </h3>
 
         <div>
           {MEALS.map(m => (
@@ -33,7 +36,9 @@ const Meal = () => {
           ))}
         </div>
 
-        <h3>For how many people?</h3>
+        <h3>
+          <FormattedMessage id={'MEAL.PAXINPUT'} />
+        </h3>
 
         <Numbox
           step={1}
