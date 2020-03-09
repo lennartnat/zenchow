@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import Card from 'components/Card/Card';
 import Button from 'components/Button/Button';
@@ -29,12 +30,14 @@ const Review = () => {
 
   return (
     <Card>
-      <h3>Order Review</h3>
+      <h3>
+        <FormattedMessage id={'REVIEW.TITLE'} />
+      </h3>
 
-      <ReviewItem label={'Meal'}>{meal[0].toUpperCase() + meal.slice(1)}</ReviewItem>
-      <ReviewItem label={'Pax'}>{pax}</ReviewItem>
-      <ReviewItem label={'Restaurant'}>{restaurant}</ReviewItem>
-      <ReviewItem label={'Food'}>
+      <ReviewItem label={'WORD.MEAL'}>{meal[0].toUpperCase() + meal.slice(1)}</ReviewItem>
+      <ReviewItem label={'WORD.PAX'}>{pax}</ReviewItem>
+      <ReviewItem label={'WORD.RESTAURANT'}>{restaurant}</ReviewItem>
+      <ReviewItem label={'WORD.FOOD'}>
         {dishes.map((dish, i) => (
           <span key={`${dish.name}_${i}`}>
             {dish.count} pc(s) {dish.name}
@@ -51,8 +54,16 @@ const Review = () => {
       >
         {'✔'}
       </Button>
-      {currentStep === OrderStep.Dish && totalDishCount < pax && <i>{'Add more food!'}</i>}
-      {totalDishCount > 10 && <i>{'Please do not exceed 10 food servings!'}</i>}
+      {currentStep === OrderStep.Dish && totalDishCount < pax && (
+        <i>
+          <FormattedMessage id={'REVIEW.ADDMORE'} />
+        </i>
+      )}
+      {totalDishCount > 10 && (
+        <i>
+          <FormattedMessage id={'REVIEW.FOODEXCEEED'} />
+        </i>
+      )}
     </Card>
   );
 };

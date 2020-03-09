@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
 import App from './views/App';
-import * as serviceWorker from './serviceWorker';
+import { ConfigProvider } from 'context/ConfigContext';
 import { StepProvider } from './context/StepContext';
 
+import * as serviceWorker from './serviceWorker';
+
+import './index.css';
+
 ReactDOM.render(
-  <StepProvider>
-    <App />
-  </StepProvider>,
+  <ConfigProvider>
+    <StepProvider>
+      <App />
+    </StepProvider>
+  </ConfigProvider>,
   document.getElementById('root')
 );
 
